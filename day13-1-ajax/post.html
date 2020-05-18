@@ -22,7 +22,7 @@
 		</style>
 	</head>
 	<body>
-		<form action="getData.php" method="get" id="subform">
+		<form action="postData.php" method="post" id="subform">
 			<div id="error">
 			</div>
 			用户名：<input type="text" name="user_name"><br><br>
@@ -51,9 +51,10 @@
 			//获取表单的数据
 			var str =  'user_name='+document.querySelector('input[name=user_name]').value+'&email='+document.querySelector('input[name=email]').value+'&pass='+document.querySelector('input[name=pass]').value;
 			//2. 建立连接
-			ajax.open('get','getData.php?'+str);
+			ajax.open('post','postData.php');
 			//3. 发送请求
-			ajax.send();
+			ajax.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+			ajax.send(str);
 			//4. 监听状态
 			ajax.onreadystatechange = function(){
 				//正确返回的时候

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style>
+		.header{
+			width:80%;
+			height:80px;
+			min-width: 505px;
+			margin:0 auto;
+			text-align: center;
+		}
+		.header input{
+			height: 60px;
+			width: 400px;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			vertical-align: middle;
+			outline: none;
+			text-indent: 30px;
+			font-size: 20px;
+		}
+		.header button{
+			background-color: gold;
+			width: 100px;
+			height: 60px;
+			line-height: 60px;
+			color: #FFF;
+			border: 1px solid #ccc;
+			vertical-align: middle;
+			outline: none;
+		}
+		.list{
+			width: 80%;
+			min-height: 505px;
+			background-color: beige;
+			margin:0 auto;
+		}
+		.list span{
+			display: inline-block;
+			background-color: aquamarine;
+			color: #333;
+			padding:10px 20px;
+			border-radius:5px;
+			margin: 20px;
+			cursor: pointer;
+			
+		}
+	</style>
+	<title></title>
+</head>
+<body>
+	<div class="header">
+		<input type="text" name="number"><button>随机产生</button>
+	</div>
+	<div class="list">
+	</div>
+	<script>
+	$(function(){
+		$('button').click(function(){
+			$('.list').on('click','span',function(){
+				$(this).hide();
+			})
+			//get请求
+			$.get('03create.php',{num:$('input').val()},function(e){
+				$('.list').html('');
+				for(var i=0;i<e.length;i++){
+					$('<span>'+e[i]+'</span>').appendTo($('.list'));
+				}
+			},'json')
+		});
+	})
+	</script>
+</html>
