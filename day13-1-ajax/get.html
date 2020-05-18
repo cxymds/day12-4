@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			form{
+				margin: 200px auto;
+				width:400px;
+				height: 200px;
+				background-color: aqua;
+				padding:25px 70px;
+				box-sizing: border-box;
+			}
+			input[type=submit]{
+				width: 170px;
+				margin-left: 65px;
+			}
+			#error{
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="getData.php" method="get" id="subform">
+			<div id="error">
+			</div>
+			用户名：<input type="text" name="user_name"><br><br>
+			邮　箱：<input type="email" name="email"><br><br>
+			密　码：<input type="password" name="pass"><br><br>
+			<input type="submit" value="注册" id="submit">
+		</form>
+	</body>
+	<script>
+		//js ajax
+		var sub = document.getElementById('submit');
+		var form = document.getElementById('subform');
+		
+		sub.onclick = function(){
+			document.getElementById('error').innerText = '';
+			//模拟提交，得到返回结果的时候进行响应 ajax 模拟http请求
+			//ajax分为4个步骤
+			//1. 创建对象
+			//兼容IE
+			var ajax = null;
+			if(window.XMLHttpRequest){
+				ajax= new XMLHttpRequest();
+			}else{
+				ajax = new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			//获取表单的数据
+			var str =  'user_name='+document.querySelector('input[name=user_name]').value+'&email='+document.querySelector('input[name=email]').value+'&pass='+document.querySelector('input[name=pass]').value;
+			//2. 建立连接
+			ajax.open('get','getData.php?'+str);
+			//3. 发送请求
+			ajax.send();
+			//4. 监听状态
+			ajax.onreadystatechange = function(){
+				//正确返回的时候
+				if(ajax.readyState==4 && ajax.status==200){
+					var re = JSON.parse(ajax.responseText);
+					if(re.code!=200){
+						document.getElementById('error').innerText = re.message;
+					}else{
+						if(confirm('注册成功')){
+							location.href  = 'index.html';
+						}
+					}
+				}
+			}
+			return false; //阻止默认行为
+		};
+	</script>
+</html>
