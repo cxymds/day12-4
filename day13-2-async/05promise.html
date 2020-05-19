@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		var promise = new Promise(function(resolve,reject){
+			var num = Math.ceil(Math.random(0,1)*53);
+			console.log(num)
+			setTimeout(function(){
+				if(num>25){
+					resolve();
+				}else{
+					reject();
+				}
+			},1000)
+		}).then(function(){
+			console.log('成功了');
+		}).catch(function(){
+			console.log('失败了');
+		});
+		
+	</script>
+</html>
