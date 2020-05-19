@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<!-- <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script> -->
+	<script src="http://test.xmage.club/index.js"></script>
+	<script>
+		var ajax = null;
+		if(window.XMLHttpRequest){
+			ajax = new XMLHttpRequest();
+		}else{
+			ajax = new ActiveXObject('Mirosoft.XMLHTTP');
+		}
+		
+		ajax.open('get','http://test.xmage.club/03.php?callback=foo');
+		ajax.send();
+		
+		ajax.onreadystatechange = function(){
+			if(ajax.readyState==4 && ajax.status==200){
+				console.log(ajax.responseText);
+			}
+		}
+	</script>
+</html>
+
+<!-- 
+lnmp ftp add
+lnmp ftp del
+ll
+test
+816ma1234
+cd /home/wwwroot/test.xmage.club -->

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+	<button>获取数据</button>
+</body>
+<script>
+	function addScriptTag(src) {  
+		 var script = document.createElement('script');  
+		 script.setAttribute("type","text/javascript");  
+		 script.src = src;  
+		 document.body.appendChild(script);
+	}
+	 
+	document.getElementsByTagName('button')[0].onclick = function(){
+		addScriptTag('http://test.xmage.club/03.php?callback=foo');
+	}
+	
+	function foo(data){
+		console.log(data)
+	}
+</script>
+</html>

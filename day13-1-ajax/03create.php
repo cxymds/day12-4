@@ -15,7 +15,7 @@ $stu_arr = explode('|',file_get_contents('stu.txt'));
 //mt_rand 产生随机数
 $arr = [];  //用户保存学生的编号
 for($i=0;$i<$num;$i++){ //用于循环产生学生编号
-	$stu_num = mt_rand(0,53); //随机产生
+	$stu_num = mt_rand(0,52); //随机产生
 	while(in_array($stu_num,$arr)){ //判断是否产生了相同的学生编号
 		$stu_num = mt_rand(0,52);;
 	}
