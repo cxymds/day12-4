@@ -1,0 +1,61 @@
+@import url("./reset.css");
+header{
+	width:800px;
+	height:80px;
+	margin:0 auto;
+	background-color: #666;
+}
+header a{
+	display: block;
+	float: right;
+	height:50px;
+	color: #fff;
+	padding:0 20px;
+	border-radius: 5px;
+	background-color: #FFD700;
+	margin:15px 40px;
+	line-height: 50px;
+}
+section{
+	width:800px;
+	margin:0 auto;
+	background-color: aliceblue;
+	min-height: 400px;
+	padding:0 10px;
+	box-sizing: border-box;
+}
+section ul li{
+	height:60px;
+	border-bottom: 1px dashed #888;
+	line-height: 60px;
+	font-size: 18px;
+	color: #00bfff;
+	cursor: pointer;
+}
+section ul li span{
+	margin-right: 50px ;
+}
+section ul li span:nth-of-type(2){
+	color:#333;
+}
+section ul li button{
+	display: none;
+	float: right;
+	margin-right: 20px;
+	border-radius: 5px;
+	background-color: #FFD700;
+	padding: 5px 10px;
+	margin-top: 15px;
+	border: 1px solid #FFD700;
+	color: #fff;
+	cursor: pointer;
+}
+section ul li:hover button{
+	display: block;
+}
+footer{
+	height: 80px;
+	background-color: #333;
+	width:800px;
+	margin:0 auto;
+}
