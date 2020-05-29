@@ -17,6 +17,14 @@ $c = ucfirst($c).'Controller';
 
 //引入控制器
 include '../app/controller/'.$c.'.php';
+//引入中间件
+// include '../app/middleware/CheckLogin.php';
+// $middle = new CheckLogin();
+// if(!$middle->check()){
+// 	echo '跳转';
+// }
+// echo '继续';
+// die;
 
 header('Access-Control-Allow-Origin: http://www.docway.net');
 header('Access-Control-Allow-Credentials: true');

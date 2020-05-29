@@ -1,6 +1,6 @@
 <?php
-include 'Base.php';
-class UserModel extends Base{
+include 'BaseBaseModel.php';
+class UserModel extends BaseModel{
 	public function add(){
 		$this->db->insert('user',[
 			'name' => 'zhangsan',

@@ -5,7 +5,7 @@ $db_config = [
 	//Localhost
 	"development" => [
 						"host" => "localhost",
-						"database" => "web2",
+						"database" => "sign",
 						"username" => "root",
 						"password" => "1"
 					 ],
