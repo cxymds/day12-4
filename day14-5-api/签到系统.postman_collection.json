@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "44c26fda-494e-4e8a-b847-ef19560a5b60",
+		"name": "签到系统",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "管理员",
+			"item": [
+				{
+					"name": "添加老师",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teacher_name",
+									"value": "xiaomama1",
+									"description": "要添加的老师的名称",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=teacher&a=add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "teacher"
+								},
+								{
+									"key": "a",
+									"value": "add"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "添加班级",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "class_name",
+									"value": "18web1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=xmrclass&a=add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "xmrclass"
+								},
+								{
+									"key": "a",
+									"value": "add"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "为班级添加老师",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "老师",
+			"item": [
+				{
+					"name": "修改自己用户名",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "修改自己的登录密码",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=teacher&a=changepassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "teacher"
+								},
+								{
+									"key": "a",
+									"value": "changepassword"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登录",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "etqgeoyusagiuyguid",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_name",
+									"value": "xiaomama1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=index&a=login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "index"
+								},
+								{
+									"key": "a",
+									"value": "login"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "添加学生",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "创建考勤",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "考勤列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "某一个考勤详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "学生",
+			"item": [
+				{
+					"name": "登录",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "考勤列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "点击考勤",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
