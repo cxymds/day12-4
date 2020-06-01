@@ -18,14 +18,21 @@ $c = ucfirst($c).'Controller';
 //引入控制器
 include '../app/controller/'.$c.'.php';
 //引入中间件
-// include '../app/middleware/CheckLogin.php';
-// $middle = new CheckLogin();
-// if(!$middle->check()){
-// 	echo '跳转';
-// }
-// echo '继续';
-// die;
-
+include '../app/middleware/CheckLogin.php';
+//判断登录状态
+$middle = new CheckLogin();
+//登录验证验证没通过
+if(!$middle->check()){
+	//当执行不是登录操作，返回未登录提示
+	if($a!='login'){
+		echo  json_encode([
+			'code' => 302,
+			'message'=>'未登录',
+			'url'=>'index.php?c=index&a=index'
+		]);
+		die;
+	}
+}
 header('Access-Control-Allow-Origin: http://www.docway.net');
 header('Access-Control-Allow-Credentials: true');
 header('Content-Type: text/html; charset=utf-8');

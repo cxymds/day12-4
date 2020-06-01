@@ -1,6 +1,5 @@
 <?php 
 include  '../app/model/TeacherModel.php';
-
 class IndexController{
 	/**
 	 * @系统首页
@@ -47,11 +46,19 @@ class IndexController{
 			]);
 			die;
 		}
-		//制作令牌 md5(id + MD5(用户名))
-		$token = md5($user['id'].md5($user['name']));
-		// $token 
-		setcookie('id',$user['id'],7*24*3600);
-		setcookie('name',$user['name'],7*24*3600);
+		
+		//制作令牌
+		$payload = [
+			'iss'=>'admin',	//token颁发者
+			'iat'=>time(),  //签发时间
+			'exp'=>time()+7200, //过期事件
+			'nbf'=>time(), //该时间之前不接收处理该Token
+			'sub'=>$user['id'], //面向的用户
+			'sub'=>$name,//用户名
+			'jti'=>md5(uniqid('JWT').time())
+		];
+		$token=Jwt::getToken($payload);
+		
 		//返回
 		echo json_encode([
 			'code'=>200,
