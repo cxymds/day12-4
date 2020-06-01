@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "44c26fda-494e-4e8a-b847-ef19560a5b60",
+		"name": "签到系统",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "管理员",
+			"item": [
+				{
+					"name": "添加老师",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZG1pbiIsImlhdCI6MTU5MDk3NzMxMCwiZXhwIjoxNTkwOTg0NTEwLCJuYmYiOjE1OTA5NzczMTAsInN1YiI6InhpYW9tYW1hMSIsImp0aSI6IjFlNzgxZjc1MTUxZDU3NmQ2Yjc0M2I1MTZlMGExYTY3In0.brwRPXI9P29kVLQ6R8FMhx-9RbR1evOat3Ag6ArUcio",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teacher_name",
+									"value": "jianfeifan",
+									"description": "要添加的老师的名称",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=teacher&a=add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "teacher"
+								},
+								{
+									"key": "a",
+									"value": "add"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "添加班级",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZG1pbiIsImlhdCI6MTU5MDk3NzMxMCwiZXhwIjoxNTkwOTg0NTEwLCJuYmYiOjE1OTA5NzczMTAsInN1YiI6InhpYW9tYW1hMSIsImp0aSI6IjFlNzgxZjc1MTUxZDU3NmQ2Yjc0M2I1MTZlMGExYTY3In0.brwRPXI9P29kVLQ6R8FMhx-9RbR1evOat3Ag6ArUcio",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "class_name",
+									"value": "18web1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=xmrclass&a=add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "xmrclass"
+								},
+								{
+									"key": "a",
+									"value": "add"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "为班级添加老师",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZG1pbiIsImlhdCI6MTU5MDk3NzMxMCwiZXhwIjoxNTkwOTg0NTEwLCJuYmYiOjE1OTA5NzczMTAsInN1YiI6InhpYW9tYW1hMSIsImp0aSI6IjFlNzgxZjc1MTUxZDU3NmQ2Yjc0M2I1MTZlMGExYTY3In0.brwRPXI9P29kVLQ6R8FMhx-9RbR1evOat3Ag6ArUcio",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "class_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "teacher_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=xmrclass&a=addTeacher",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "xmrclass"
+								},
+								{
+									"key": "a",
+									"value": "addTeacher"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "老师",
+			"item": [
+				{
+					"name": "修改自己用户名",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "teacher_name",
+									"value": "lisi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=teacher&a=changename",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "teacher"
+								},
+								{
+									"key": "a",
+									"value": "changename"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "修改自己的登录密码",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=teacher&a=changepassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "teacher"
+								},
+								{
+									"key": "a",
+									"value": "changepassword"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登录",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_name",
+									"value": "xiaomama1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=index&a=login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "index"
+								},
+								{
+									"key": "a",
+									"value": "login"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "添加学生",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "创建考勤",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZG1pbiIsImlhdCI6MTU5MDk4MjAxNywiZXhwIjoxNTkwOTg5MjE3LCJuYmYiOjE1OTA5ODIwMTcsInN1Yl9pZCI6IjIiLCJzdWIiOiJ4aWFvbWFtYTEiLCJqdGkiOiIwZTJlYTkxYzllNDEwMjNiYzQzNmNiNGJhZmQ2YmY3MiJ9.XXa3XI9IJfzReca9PAeSgonWM5kdU8rjxZKjgHteTTI",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "stert_time",
+									"value": "2020-06-01 12:11:11",
+									"type": "text"
+								},
+								{
+									"key": "end_time",
+									"value": "2020-06-01 12:15:11",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=xmrclass&a=createSign&cid=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "xmrclass"
+								},
+								{
+									"key": "a",
+									"value": "createSign"
+								},
+								{
+									"key": "cid",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "考勤列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "某一个考勤详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "班级列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZG1pbiIsImlhdCI6MTU5MDk4MjAxNywiZXhwIjoxNTkwOTg5MjE3LCJuYmYiOjE1OTA5ODIwMTcsInN1Yl9pZCI6IjIiLCJzdWIiOiJ4aWFvbWFtYTEiLCJqdGkiOiIwZTJlYTkxYzllNDEwMjNiYzQzNmNiNGJhZmQ2YmY3MiJ9.XXa3XI9IJfzReca9PAeSgonWM5kdU8rjxZKjgHteTTI",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost/work/day14-4-api/web2frame/public/index.php?c=xmrclass&a=getClassList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"work",
+								"day14-4-api",
+								"web2frame",
+								"public",
+								"index.php"
+							],
+							"query": [
+								{
+									"key": "c",
+									"value": "xmrclass"
+								},
+								{
+									"key": "a",
+									"value": "getClassList"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "学生",
+			"item": [
+				{
+					"name": "登录",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "考勤列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "点击考勤",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
