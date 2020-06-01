@@ -1,5 +1,5 @@
 <?php 
-include 'BaseModel.php';
+include_once 'BaseModel.php';
 class XmrclassModel extends BaseModel{
 	public function checkClassExists($name){
 		   $re = $this->db->table('xmr_class')->where('name','=',$name)->get()->toArray();
@@ -23,5 +23,31 @@ class XmrclassModel extends BaseModel{
 		   }
 		   
 	}
+	
+	
+	/**
+	 * @desc 根据班级的id查找班级信息
+	 * @param int $id 班级id
+	 */
+	public function getClassById($id){
 		
+		return $this->db->table('xmr_class')->where($id)->get()->toArray();
+	}
+	
+	
+	/**
+	 * @desc 为班级添加老师
+	 * @param {int} $class_id 班级id
+	 * @param {int} $teacher_id 老师的id
+	 */
+	public function addTeacherForClass($class_id,$teacher_id){
+		$insert_id = $this->db->insert('teacher_class',[
+			'tid'=>$teacher_id,
+			'cid'=>$class_id
+		]);
+		if($insert_id>0){
+			return true;
+		}
+		return false;
+	}		
 }

@@ -53,7 +53,7 @@ class IndexController{
 			'iat'=>time(),  //签发时间
 			'exp'=>time()+7200, //过期事件
 			'nbf'=>time(), //该时间之前不接收处理该Token
-			'sub'=>$user['id'], //面向的用户
+			'sub_id'=>$user['id'], //面向的用户
 			'sub'=>$name,//用户名
 			'jti'=>md5(uniqid('JWT').time())
 		];

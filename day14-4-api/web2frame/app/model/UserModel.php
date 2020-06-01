@@ -1,5 +1,5 @@
 <?php
-include 'BaseBaseModel.php';
+include_once 'BaseBaseModel.php';
 class UserModel extends BaseModel{
 	public function add(){
 		$this->db->insert('user',[

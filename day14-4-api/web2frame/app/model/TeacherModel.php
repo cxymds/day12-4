@@ -1,6 +1,6 @@
 <?php 
 
-include 'BaseModel.php';
+include_once 'BaseModel.php';
 class TeacherModel extends BaseModel{
 	
    public function checkTeacherExists($name){
@@ -27,6 +27,9 @@ class TeacherModel extends BaseModel{
 	   
    }
 	
+	/**
+	 * @param {Object} $data
+	 */
 	public function checkLogin($data){
 		$re = $this->db->table('admin')->where([['name',$data['name']],['pass',$data['pass']],['status',$data['status']]])->get()->first()->toArray();
 		if($re){
@@ -36,5 +39,20 @@ class TeacherModel extends BaseModel{
 		}
 	}
 	
+	/**
+	 * @desc 根据老师的id获取老师信息
+	 * @param {Object} $id 老师的id
+	 */
+	public function getTeacherById($id){
+		return $this->db->table('admin')->where($id)->get()->toArray();
+	}
 	
+	
+	/**
+	 * @desc  根据老师的id查找老师的所有班级
+	 * @param {int} $id 老师的id
+	 */
+	public function getClassByTeacherId($id){
+		return $this->db->table('teacher_class')->where('tid','=',$id)->get()->toArray();
+	}
 }

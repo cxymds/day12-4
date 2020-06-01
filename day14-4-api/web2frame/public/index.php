@@ -22,7 +22,7 @@ include '../app/middleware/CheckLogin.php';
 //判断登录状态
 $middle = new CheckLogin();
 //登录验证验证没通过
-if(!$middle->check()){
+if(!$user = $middle->check()){
 	//当执行不是登录操作，返回未登录提示
 	if($a!='login'){
 		echo  json_encode([
@@ -33,6 +33,7 @@ if(!$middle->check()){
 		die;
 	}
 }
+$GLOBALS['user'] = $user;
 header('Access-Control-Allow-Origin: http://www.docway.net');
 header('Access-Control-Allow-Credentials: true');
 header('Content-Type: text/html; charset=utf-8');
