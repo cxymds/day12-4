@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>第1个按钮</button>
+		<button>第2个按钮</button>
+		<button>第3个按钮</button>
+		<button>第4个按钮</button>
+		<button>第5个按钮</button>
+		<button>第6个按钮</button>	
+		<script>
+		if(true){
+			function say(){
+				console.log(1)
+			}
+		}
+
+		say();
+					
+			
+			// function bar(x = y, y = 2) {
+			//   return [x, y];
+			// }
+			// bar();
+			
+			//大括号括起来的称之为块作用域，有循环  switch结构 if结构
+			// for(let i =0;i<3;i++){
+			// 	console.log(i)
+			// 	// let i ='a';
+			// 	let i = '123';
+			// }
+			
+			
+			/*
+			console.log(a)
+			let a = 12;
+			*/
+			
+			// //for其实是俩个作用域，大括号里面是一个子作用域
+			// for(let i=0;i<=3;i++){
+			// 	let i = 'a';
+			// 	console.log(i);
+			// }
+			
+			/*
+			var btns = document.getElementsByTagName('button');
+			for(let i=0;i<btns.length;i++){
+				btns[i].onclick = function(){
+					console.log(i)
+				}
+			}
+			*/
+			
+			/*
+			//代码块内部定义的变量
+			{
+				var a = 12;
+				let b =10;
+			}
+			console.log(a) //12
+			console.log(b) //not defined
+			*/
+		   
+		   /*
+		   //let使用for循环参数里只能在循环内部使用
+		   for(let i=0;i<=5;i++){
+			   console.log(i)
+		   }
+		   console.log(i) //not  defined
+		   */
+		</script>
+	</body>
+</html>
