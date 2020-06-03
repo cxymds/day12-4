@@ -112,13 +112,59 @@ say();  //1
 
 ### const
 
+js用于定义常量：一单定义之后不允许修改的值称为常量。
+
++ const声明一个只读的常量。一旦声明，常量的值就不能改变。
 
 
++ const申明变量必须在进行初始化赋值。不允许先申明后赋值。
 
+
++ const的作用域是块级作用域，与let的作用域相同
++ const不存在变量提升特性，也存在暂时性死区， 也不能重复定义
++ const本质上是指向的地址指针不发生变化，对于指针指向的是对象的变量，其实是可以发生变化的。所以尽量将常量定义为简单数据类型（数字，字符串，布尔值）
++ 如果避免不了料使用对象作为常量，可以对这个对象进行冻结 object.freeze
+
+**从 ES6 开始，全局变量将逐步与顶层对象的属性脱钩。**
+
+```javascript
+var a = 12;
+console.log(window.a)  //12
+
+let a = 12;
+console.log(window.a)  //undefined
+```
+
+### 获取各种运行环境下的全局对象
+
+```javascript
+// 方法一
+(typeof window !== 'undefined'
+   ? window
+   : (typeof process === 'object' &&
+      typeof require === 'function' &&
+      typeof global === 'object')
+     ? global
+     : this);
+
+// 方法二
+var getGlobal = function () {
+  if (typeof self !== 'undefined') { return self; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  throw new Error('unable to locate global object');
+};
+```
 
 
 
 ### 作业：
 
 使用markdown整理所有let语法。预习const语法，也整理早markdown笔记中 。发表在技术博客。连接发送到群里。
+
+
+
+## 变量的解构赋值
+
+### 数组的解构赋值
 
