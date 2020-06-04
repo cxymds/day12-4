@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<script src="./ajax.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		ajax('getuser.php',
+		(user)=>{
+			console.log(user.id)
+			ajax(`getScore.php?id=${user.id}`,
+			(data)=>{
+				console.log(data)
+			},
+			()=>{
+				console.log('错误信息')
+			})
+		},
+		()=>{
+			
+		});
+		
+	</script>
+	</body>
+</html>

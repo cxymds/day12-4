@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<script>
+	let promise = new Promise((resolve,reject)=>{
+		//异步操作
+		let img = new Image();
+		img.src = './jp.webp1';
+		document.body.appendChild(img);
+		img.onload = ()=>{
+			resolve();
+		}
+		img.onerror = ()=>{
+			reject();
+		}
+	});
+	
+	
+	promise.then(()=>{
+		console.log('加载成功')
+	},()=>{
+		console.log('加载失败')
+	});
+	
+</script>
+</body>
+</html>

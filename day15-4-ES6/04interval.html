@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<script>
+		function interval(callback,delay){
+			let timer = setInterval(()=>callback(timer),delay);
+		}
+		console.log(1)
+		
+		interval(timer=>{
+			console.log(2)
+			clearInterval(timer);
+		},1000);
+		
+		console.log(3)
+	</script>
+	</body>
+</html>
