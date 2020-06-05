@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<script type="text/javascript" src="../day15-4-ES6/ajax.js"></script>
+	<script type="text/javascript">
+		console.log(1111)
+		let p = new Promise((resolve,reject)=>{
+			//发起ajax请求
+			//异步操作结果的逻辑 用于实现promise状态的变化
+			ajax('../day15-4-ES6/getuser.php',resolve,reject)
+		}).then((user)=>{
+			console.log('第一次成功')
+			ajax(`../day15-4-ES6/getScore.php?id=${user.id}`,()=>{console.log('成功')},reject);
+			
+			console.log('2')
+		},()=>{
+			console.log('第一次失败')
+		}).then((score)=>{
+			console.log('第二次请求成功')
+			console.log(score)
+		},()=>{
+			console.log('第二次失败')
+		});
+		
+
+		
+		console.log(2222)
+		
+		/*
+		let p = new Promise(function(resolve,reject){
+		})
+		*/
+		console.log(p)
+	</script>
+	</body>
+</html>

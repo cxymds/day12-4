@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	
+	<body>
+	<script type="text/javascript" src="newAjax.js">
+	</script>
+		
+	<script type="text/javascript">
+		Ajax('get','../day15-4-ES6/getuser.php').then(
+		(user)=>{
+			console.log(user);
+		}).catch(
+		()=>{
+			console.log('something wrong');
+		}).finally(
+		()=>{
+			console.log('最后执行')
+		})
+	</script>
+	</body>
+</html>

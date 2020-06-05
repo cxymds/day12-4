@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<script type="text/javascript" src="ajax.js"></script>
+	<script type="text/javascript">
+		//发起第一次请求
+		ajax('../day15-4-ES6/getuser.php').then(
+		//resolve
+		(user)=>{	
+			return ajax(`../day15-4-ES6/getScore.php?id=${user.id}`);
+		},
+		//reject
+		()=>{
+			console.log('第一次失败')
+		}).then(
+		(data)=>{
+			console.log(data.php)
+		},
+		()=>{
+			console.log('第二次的失败')
+		})
+		
+		/*
+		let p = new Promise(function(resolve,reject){
+		})
+		*/
+	</script>
+	</body>
+</html>
