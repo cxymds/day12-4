@@ -1,0 +1,19 @@
+{
+  "name": "day16-2-nodejs",
+  "version": "1.0.0",
+  "description": "nodejs是一门语言吗、是一个js运行环境。",
+  "main": "01node.js",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
