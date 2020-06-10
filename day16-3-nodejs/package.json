@@ -1,0 +1,20 @@
+{
+  "name": "day16-3-nodejs",
+  "version": "1.0.0",
+  "description": "复习：\r \t##nodejs 安装： \r \t\t1. 安装包  只能装一个版本 LTS  长期支持版 \r \t\t2. nvm 管理工具  nvm安装nodejs",
+  "main": "01index.js",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "mime": "^2.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+	"start":"nodemon 10router.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
